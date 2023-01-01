@@ -1,15 +1,17 @@
 .slider {
-    position: relative;
+    /* position: relative; */
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 2px solid purple;
 }
 
 .image {
-    width: 1000px;
-    height: 600px;
+    width: 100rem;
+    height: 300;
     border-radius: 10px;
+    border: 2px solid black
 }
 
 .right-arrow {
@@ -37,6 +39,8 @@
 .slide {
     opacity: 0;
     transition-duration: 1s ease;
+    border: 2px solid red;
+    display: flex;
 }
 
 .slide.active {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { SliderData } from './SliderData';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
+import AppButton from './reusables/AppButton';
 
 const ImageSlider = ({ slides }) => {
     const [current, setCurrent] = useState(0);
@@ -31,6 +32,9 @@ const ImageSlider = ({ slides }) => {
                         {index === current && (
                             <img src={slide.image} alt='travel image' className='image' />
                         )}
+                        <div>
+                            <AppButton>Contact Us</AppButton>
+                        </div>
                     </div>
                 );
             })}

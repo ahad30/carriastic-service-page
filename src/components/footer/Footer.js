@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { commonStyles } from '../../styles/commonStyles';
+import { Box } from '@mui/system';
+import { Icon } from '@iconify/react';
+import { IconButton } from '@mui/material';
 
 const FooterWrapper = styled.footer`
   padding: 20px;
@@ -117,6 +120,14 @@ const Footer = () => (
         © Copyright - <b>Carriastic</b> - 2022. All Rights Reserved.
       </FooterCopyright>
     </FooterContent>
+
+    <Box style={{ display: "flex", justifyContent: "center" }}>
+      <IconButton aria-label="delete" size="small">
+        <Icon icon="ic:baseline-facebook" color="white" width={32} />
+      </IconButton>
+      <Icon icon="mdi-light:home" color="white" width={32} />
+      <Icon icon="mdi-light:home" color="white" width={32} />
+    </Box>
 
   </FooterWrapper>
 );
