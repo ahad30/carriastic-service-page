@@ -1,18 +1,5 @@
 import React, {useState} from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom";
-
-import Language from './Language';
-import PInfo from './PersonalInfo';
-import WorkExperience from './Workexperience';
-import Summary from './Summary';
-import Areasofexperties from './Areasofexperties';
-import Courses from  './Courses';
-import Projects from  './Projects';
-import Education from './Education';
-import Certifications from './Certifications';
-import Extracurricularactivities from './Extracurricularactivities';
-import Reference from './Reference';
-
+import { NavLink } from "react-router-dom";
 
 
 function Cv() {

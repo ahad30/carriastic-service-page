@@ -89,7 +89,15 @@ const App = () => {
             {path:"Extracurricularactivities", element:<Extracurricularactivities/>},
             {path:"Reference", element:<Reference/>}
           ]
-        }
+        },
+        {
+          path:"Contact",
+          element:<Contact/>
+        },
+        {
+          path:"signIn",
+          element:<SignIn/>
+        },
       ]
     }
   ]);
