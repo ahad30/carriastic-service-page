@@ -91,24 +91,9 @@ const Footer = () => (
       <nav>
 
         <FooterLinks>
-          {footerItemList?.map((item, index) => <FooterLink>
+          {footerItemList?.map((item, index) => <FooterLink key={index}> 
             <a href={item.link} style={commonStyles.footerLink} key={index}>{item.name}</a>
           </FooterLink>)}
-          {/* <FooterLink>
-            <a href="/about">About Us</a>
-          </FooterLink>
-          <FooterLink>
-            <a href="/">Our Clients</a>
-          </FooterLink>
-          <FooterLink>
-            <a href="/blog">Blog</a>
-          </FooterLink>
-          <FooterLink>
-            <a href="/about">Our Team</a>
-          </FooterLink>
-          <FooterLink>
-            <a href="/contact">Contact Us</a>
-          </FooterLink> */}
         </FooterLinks>
       </nav>
       <FooterSocialLinks>

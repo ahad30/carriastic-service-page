@@ -51,7 +51,7 @@ const SignInError = styled.div`
   margin-top: 20px;
 `;
 
-const Career = () => {
+const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
@@ -87,4 +87,4 @@ const Career = () => {
   );
 };
 
-export default Career;
+export default SignIn;

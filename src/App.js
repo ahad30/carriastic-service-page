@@ -2,20 +2,34 @@ import React from 'react';
 import About from './components/About';
 import Blog from './components/Blog';
 import Services from './components/Services';
+import './App.css';
+import Cv from './components/Cv';
 import Home from './components/Home';
-import Career from './components/Career';
+import SignIn from './components/SignIn';
 import Contact from './components/Contact';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Routes } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './GlobalStyle';
+import PInfo from './components/PersonalInfo';
+import Summary from './components/Summary';
+import WorkExperience from './components/Workexperience';
+import Education from './components/Education';
+import Language from './components/Language';
+import Areasofexperties from './components/Areasofexperties';
+import Courses from './components/Courses';
+import Certifications from './components/Certifications';
+import Projects from './components/Projects';
+import Extracurricularactivities from './components/Extracurricularactivities';
+import Reference from './components/Reference';
+import Main from './layouts/Main';
+import Profile from './layouts/Profile';
 
 
 const App = () => {
-
   const theme = {
     colors: {
       heading: "rgb(24 24 29)",
@@ -36,22 +50,57 @@ const App = () => {
     },
     media: { mobile: "768px", tab: "998px" },
   };
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Main />,
+      children:[
+        {
+          path:"/",
+          element:<Home/>
+        },
+        {
+          path:"about",
+          element:<About/>
+        },
+        {
+          path:"services",
+          element:<Services/>
+        },
+        {
+          path:"blog",
+          element:<Blog/>
+        },
+        {
+          path:"career",
+          element:<Profile/>,
+          children:[
+            {
+              path:"PersonalInfo", element:<PInfo/>
+            },
+            {path:"Summary", element:<Summary/>},
+            {path:"Workexperience", element:<WorkExperience/>},
+            {path:"Education", element:<Education/>},
+            {path:"Language", element:<Language/>},
+            {path:"Areasofexperties", element:<Areasofexperties/>},
+            {path:"Courses", element:<Courses/>},
+            {path:"Certifications", element:<Certifications/>},
+            {path:"Projects", element:<Projects/>},
+            {path:"Extracurricularactivities", element:<Extracurricularactivities/>},
+            {path:"Reference", element:<Reference/>}
+          ]
+        }
+      ]
+    }
+  ]);
+
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/services' element={<Services />} />
-          <Route path='/blog' element={<Blog />} />
-          <Route path='/career' element={<Career />} />
-          <Route path='/contact' element={<Contact />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+    <GlobalStyle />
+    <RouterProvider router={router}>
+
+    </RouterProvider>
     </ThemeProvider>
   );
 }
