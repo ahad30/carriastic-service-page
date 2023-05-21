@@ -48,8 +48,8 @@ const Extracurricularactivities = () => {
           </div>
           {index === courses.length - 1 && (
             <div className="text-left">
-              <button type="button" onClick={handleAddCourse} className="btn btn-primary mr-2">Add More</button>
-              {courses.length !== 1 && <button type="button" onClick={() => handleRemoveCourse(index)} className="btn btn-danger">Remove</button>}
+              <button type="button" onClick={handleAddCourse} className="btn btn-primary me-3 mt-3">Add More</button>
+              {courses.length !== 1 && <button type="button" onClick={() => handleRemoveCourse(index)} className="btn btn-danger mt-3">Remove</button>}
             </div>
           )}
           <hr />

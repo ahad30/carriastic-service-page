@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlusCircle, faMinusCircle } from "@fortawesome/free-solid-svg-icons";
 
 function PInfo() {
   const [socialLinks, setSocialLinks] = useState([
@@ -76,10 +74,10 @@ function PInfo() {
           </div>
         </div>
         <div className="col-md-12">
-          <label>Social Links</label>
+          <label className='me-3'>Social Links</label>
           {socialLinks.map((link, index) => (
             <div key={index} className="input-group mb-3">
-              <div className="input-group-prepend">
+              <div className="input-group-prepend me-3">
                 <select
                   name="name"
                   value={link.name}

@@ -4,17 +4,7 @@ import { NavLink } from "react-router-dom";
 
 function Cv() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const handlePrevious = () => {
-    if (activeIndex > 0) {
-      setActiveIndex(activeIndex - 1);
-    }
-  };
-
-  const handleNext = () => {
-    if (activeIndex < buttons.length - 1) {
-      setActiveIndex(activeIndex + 1);
-    }
-  };
+ 
   
 
   const buttons = [
@@ -51,10 +41,7 @@ function Cv() {
               </NavLink>
             ))}
           </div>
-         {/*  <div>
-            <button className='prevnxt' onClick={handlePrevious} disabled={activeIndex === 0}>Prev</button>
-            <button className='prevnxt' onClick={handleNext} disabled={activeIndex === buttons.length - 1}>Next</button>
-          </div> */}
+
           <div>
             <button className='previewbtn btn btn-warning font-weight-bold' >Preview</button>
             
