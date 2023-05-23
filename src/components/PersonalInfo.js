@@ -63,7 +63,7 @@ function PInfo() {
         </div>
         <div className="col-md-4">
           <div className="form-group">
-            <label>Phone</label>
+            <label>Address</label>
             <input type="text" className="form-control" />
           </div>
         </div>

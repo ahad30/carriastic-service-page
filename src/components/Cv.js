@@ -1,11 +1,16 @@
-import React, {useState} from 'react';
+import React, { useState, useRef} from 'react';
 import { NavLink } from "react-router-dom";
+import { useReactToPrint } from 'react-to-print';
 
 
 function Cv() {
   const [activeIndex, setActiveIndex] = useState(0);
- 
-  
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+    documentTitle: 'emp-data',
+    onAfterPrint: () => alert('Print success')
+  });
 
   const buttons = [
     { title: "Personal Info", path: "PersonalInfo" },
@@ -22,34 +27,34 @@ function Cv() {
   ];
 
   return (
-    <div style={{backgroundColor:'skyblue'}}>
-      <section  style={{ backgroundColor: "#7A52C1", padding: "20px" }}>
-      <h1 className='d-flex justify-content-center cvh1' style={{ color: "White" }}> Carriastic Resume Builder</h1>
-      </section>
+    <>
+      <div ref={componentRef} style={{ backgroundColor: 'skyblue' }}>
+        <section style={{ backgroundColor: "#7A52C1", padding: "20px" }}>
+          <h1 className='d-flex justify-content-center cvh1' style={{ color: "White" }}> Carriastic Resume Builder</h1>
+        </section>
 
-      <section style={{ backgroundColor: "#7A52C1", padding: "20px" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <div>
-            {buttons.map((button, index) => (
-              <NavLink to={button.path} key={index}>
-                <button className="trackbuttons"
-                  style={{ backgroundColor: activeIndex === index ? "#7A52C1" : "#fff", color: activeIndex === index ? "#fff" : "#000" }}
-                  onClick={() => setActiveIndex(index)}
-                >
-                  {button.title}
-                </button>
-              </NavLink>
-            ))}
+        <section style={{ backgroundColor: "#7A52C1", padding: "20px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div>
+              {buttons.map((button, index) => (
+                <NavLink to={button.path} key={index}>
+                  <button className="trackbuttons"
+                    style={{ backgroundColor: activeIndex === index ? "#7A52C1" : "#fff", color: activeIndex === index ? "#fff" : "#000" }}
+                    onClick={() => setActiveIndex(index)}
+                  >
+                    {button.title}
+                  </button>
+                </NavLink>
+              ))}
+            </div>
+
+            <div>
+              <button onClick={handlePrint} className='previewbtn btn btn-warning font-weight-bold' >Preview</button>
+            </div>
           </div>
-
-          <div>
-            <button className='previewbtn btn btn-warning font-weight-bold' >Preview</button>
-            
-          </div>
-        </div>
-      </section>
-
-  </div> 
+        </section>
+      </div>
+    </>
   );
 }
 

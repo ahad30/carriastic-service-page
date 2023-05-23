@@ -3,15 +3,10 @@ import About from './components/About';
 import Blog from './components/Blog';
 import Services from './components/Services';
 import './App.css';
-import Cv from './components/Cv';
 import Home from './components/Home';
 import SignIn from './components/SignIn';
 import Contact from './components/Contact';
-import { BrowserRouter, RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { Routes } from 'react-router-dom';
-import { Route } from 'react-router-dom';
-import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './GlobalStyle';
 import PInfo from './components/PersonalInfo';
@@ -75,9 +70,7 @@ const App = () => {
           path:"career",
           element:<Profile/>,
           children:[
-            {
-              path:"PersonalInfo", element:<PInfo/>
-            },
+            { path:"PersonalInfo", element:<PInfo/>},
             {path:"Summary", element:<Summary/>},
             {path:"Workexperience", element:<WorkExperience/>},
             {path:"Education", element:<Education/>},
@@ -102,12 +95,10 @@ const App = () => {
     }
   ]);
 
-
   return (
     <ThemeProvider theme={theme}>
     <GlobalStyle />
     <RouterProvider router={router}>
-
     </RouterProvider>
     </ThemeProvider>
   );
